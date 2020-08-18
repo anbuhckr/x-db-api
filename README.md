@@ -11,7 +11,7 @@ $ pip install -U git+https://github.com/anbuhckr/xdbapi.git
 #### Create client
 ```python
 import xdbapi
-client = pornhub.PornHub()
+client = xdbapi.PornHub()
 ```
 
 #### Create client with proxy 
@@ -31,7 +31,7 @@ for star in client.getStars(10):
 #### Create client with search keywords
 ```python
 keywords = ["word1", "word2"]
-client = pornhub.PornHub(keywords)
+client = xdbapi.PornHub(keywords)
 
 for video in client.getVideos(10,page=2):
     print(video)
