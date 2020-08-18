@@ -26,7 +26,7 @@ setup(
     version=version,
     description="x-db-api",
     long_description=readme,
-    author=["Sven Skender", "Ibrahim Ipek"]
+    author="anbuhckr",
     author_email='anbu.hckr@hotmail.com',
     url='https://github.com/anbuhckr/x-db-api',
     packages=find_packages(),
