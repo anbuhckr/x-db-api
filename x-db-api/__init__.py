@@ -34,5 +34,6 @@ __copyright__   = "Copyright 2016 by Sven Skender"
 __authors__      = ["Sven Skender", "Ibrahim Ipek"]
 __source__      = "https://github.com/sskender/pornhub-api/"
 __license__     = "MIT"
+__version__     = "0.1.1"
 
 __all__ = ["PornHub",]
