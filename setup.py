@@ -12,7 +12,7 @@ with open('README.md') as readme_file:
 _version_re = re.compile(r'__version__\s+=\s+(.*)')
 
 
-with open('x-db-api/__init__.py', 'rb') as f:
+with open('xdbapi/__init__.py', 'rb') as f:
     version = str(ast.literal_eval(_version_re.search(
         f.read().decode('utf-8')).group(1)))
 
@@ -22,9 +22,9 @@ requirements = [
 ]
 
 setup(
-    name='x-db-api',
+    name='xdbapi',
     version=version,
-    description="x-db-api",
+    description="xdbapi",
     long_description=readme,
     author="anbuhckr",
     author_email='anbu.hckr@hotmail.com',
