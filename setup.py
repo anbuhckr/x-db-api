@@ -18,7 +18,7 @@ with open('x-db-api/__init__.py', 'rb') as f:
 
 
 requirements = [
-    'BeautifulSoup>=4.9.1',    
+    'beautifulsoup4>=4.9.1',    
 ]
 
 setup(
