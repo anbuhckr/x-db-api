@@ -1,23 +1,23 @@
-# x-db-api
+# xdbapi
 Unofficial API for pornhub.com in Python
 
 ## Usage
 
 #### Install
 ```
-$ pip install -U git+https://github.com/anbuhckr/x-db-api.git
+$ pip install -U git+https://github.com/anbuhckr/xdbapi.git
 ```
 
 #### Create client
 ```python
-import pornhub
+import xdbapi
 client = pornhub.PornHub()
 ```
 
 #### Create client with proxy 
 ```python
-import pornhub
-client = pornhub.PornHub("5.135.164.72", 3128)
+import xdbapi
+client = xdbapi.PornHub("5.135.164.72", 3128)
 #With proxy, given a Proxy IP and Port. For the countries with restricted access like Turkey, etc.
 ```
 
