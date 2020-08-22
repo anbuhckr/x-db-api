@@ -32,6 +32,17 @@ class Videos(object):
         html = r.text
 
         return BeautifulSoup(html, "lxml")
+    
+    def _videoTags(self, url):
+        result = []
+        r = requests.get(url, headers=HEADERS, proxies=self.ProxyDictionary)
+        html = r.text
+        xml = BeautifulSoup(html, "lxml")
+        div_el = xml.find("div", { "class" : "tagsWrapper" } )
+        for a_tag in div_el.find_all("a", href=True):
+            result.append(a_tag.text)
+            
+        return result
 
     def _scrapLiVideos(self, soup_data):
         return soup_data.find_all("li", { "class" : re.compile(".*videoblock videoBox.*") } )
@@ -42,7 +53,8 @@ class Videos(object):
             "url"           : None,     # string
             "rating"        : None,     # integer
             "duration"      : None,     # string
-            "background"    : None      # string
+            "background"    : None,     # string
+            "tags"          : None      # list
         }
 
         # scrap url, name
@@ -81,6 +93,13 @@ class Videos(object):
                 break
             except Exception as e:
                 pass
+            
+        # scrap tags        
+        try:
+            data["tags"] = _videoTags(data["url"])
+            break
+        except Exception as e:
+            pass       
 
         # return
         return data if None not in data.values() else False
