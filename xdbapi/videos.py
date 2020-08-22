@@ -63,6 +63,7 @@ class Videos(object):
                 url = a_tag.attrs["href"]
                 if isVideo(url):
                     data["url"] = BASE_URL + url
+                    data["tags"] = self._videoTags(BASE_URL + url)
                     data["name"] = a_tag.attrs["title"]
                     break
             except Exception as e:
@@ -92,13 +93,7 @@ class Videos(object):
                 data["rating"] = int( str(div_tag).split(">")[1].split("%")[0] )
                 break
             except Exception as e:
-                pass
-            
-        # scrap tags        
-        try:
-            data["tags"] = _videoTags(data["url"])            
-        except Exception as e:
-            pass       
+                pass           
 
         # return
         return data if None not in data.values() else False
