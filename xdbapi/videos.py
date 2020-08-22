@@ -96,8 +96,7 @@ class Videos(object):
             
         # scrap tags        
         try:
-            data["tags"] = _videoTags(data["url"])
-            break
+            data["tags"] = _videoTags(data["url"])            
         except Exception as e:
             pass       
 
